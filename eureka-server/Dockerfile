@@ -1,4 +1,4 @@
-FROM openjdk:22-ea-14-jdk-slim as build
+FROM openjdk:22-ea-15-jdk-slim-bullseye as build
 
 COPY .mvn .mvn
 COPY mvnw .
@@ -10,7 +10,7 @@ COPY src src
 
 RUN ./mvnw -B package                                        
 
-FROM openjdk:22-ea-14-jdk-slim
+FROM openjdk:22-ea-15-jdk-slim-bullseye
 
 COPY --from=build target/eureka-server-0.0.1-SNAPSHOT.jar .
 
