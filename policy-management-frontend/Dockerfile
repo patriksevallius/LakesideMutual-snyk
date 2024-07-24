@@ -6,7 +6,7 @@ RUN npm install
 COPY . ./
 RUN npm run build
 
-FROM nginx:stable-alpine
+FROM nginx:1.26.1-alpine3.19
 COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /usr/src/app/dist /usr/share/nginx/html
 EXPOSE 80
