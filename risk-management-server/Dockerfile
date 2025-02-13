@@ -1,4 +1,4 @@
-FROM node:20.7-bullseye-slim
+FROM node:20.18.3-bullseye-slim
 WORKDIR /usr/src/app
 COPY package.json ./
 COPY package-lock.json ./
